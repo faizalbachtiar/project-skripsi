@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|assets|images|js|css|uploads|favicon.jpg)
+RewriteCond %(REQUEST_FILENAME) !-f
+RewriteCond %(REQUEST_FILENAME) !-d
+RewriteRule ^(.*)$ ./index.php/$1 [L]
+RewriteCond %{REQUEST_URI}\\/%{HTTP_HOST}/www. ^/+(.+/)?[^.]*[^/]\\(/)([^w][^w][^w][^.].*/(www\.)¦.*)$ [OR,NC]
+RewriteCond %{HTTP_HOST}/www. ^(/)?(/)?([^w][^w][^w][^.].*/(www\.))$ [NC]
